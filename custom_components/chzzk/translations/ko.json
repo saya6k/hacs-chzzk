@@ -1,0 +1,101 @@
+{
+    "title": "치지직",
+    "config": {
+        "step": {
+            "user": {
+                "title": "Naver 세션 쿠키 (선택)",
+                "description": "방송 상태·제목·시청자·팔로워 수는 익명 요청만으로도 동작하므로 이 단계는 건너뛰어도 됩니다. 성인 채널이나 향후 인증이 필요한 기능을 쓸 때만 chzzk.naver.com 에서 NID_AUT 와 NID_SES 쿠키를 복사해 입력하세요. 입력한 쿠키는 한 번 저장되어 추가하는 모든 채널이 공유합니다.",
+                "data": {
+                    "nid_aut": "NID_AUT 쿠키",
+                    "nid_ses": "NID_SES 쿠키"
+                }
+            },
+            "channel": {
+                "title": "첫 치지직 채널 추가",
+                "description": "채널 URL(https://chzzk.naver.com/CHANNELID) 또는 32자 채널 ID를 붙여넣으세요. 추가 채널은 통합의 설정(Configure) 메뉴에서 더 등록할 수 있습니다.",
+                "data": {
+                    "channel": "채널 URL 또는 ID"
+                }
+            }
+        },
+        "error": {
+            "invalid_channel": "입력값에서 채널 ID를 추출하지 못했습니다.",
+            "not_found": "치지직이 이 채널 ID를 찾을 수 없습니다.",
+            "cannot_connect": "api.chzzk.naver.com에 연결하지 못했습니다. 네트워크 상태를 확인하고 다시 시도하세요.",
+            "invalid_cookies": "치지직이 이 쿠키를 거부했습니다. chzzk.naver.com에 로그인한 뒤 NID_AUT 와 NID_SES 값을 다시 복사해 주세요.",
+            "already_added": "이 채널은 이미 추가되어 있습니다."
+        },
+        "abort": {
+            "single_instance_allowed": "치지직 통합은 이미 설정되어 있습니다. 기존 항목의 설정(Configure) 메뉴에서 채널을 추가/제거하세요."
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "치지직",
+                "description": "채널을 추가하거나 제거하고, 모든 채널이 공유하는 Naver 세션 쿠키를 갱신할 수 있습니다.",
+                "menu_options": {
+                    "add_channel": "채널 추가",
+                    "remove_channel": "채널 제거",
+                    "update_cookies": "Naver 세션 쿠키 갱신"
+                }
+            },
+            "add_channel": {
+                "title": "채널 추가",
+                "description": "채널 URL(https://chzzk.naver.com/CHANNELID) 또는 32자 채널 ID를 붙여넣으세요.",
+                "data": {
+                    "channel": "채널 URL 또는 ID"
+                }
+            },
+            "remove_channel": {
+                "title": "채널 제거",
+                "description": "제거할 채널을 선택하세요. 해당 채널의 디바이스와 엔티티는 자동으로 정리됩니다.",
+                "data": {
+                    "channel": "채널"
+                }
+            },
+            "update_cookies": {
+                "title": "Naver 세션 쿠키 갱신",
+                "description": "이전 세션이 만료된 경우 공유 NID_AUT 와 NID_SES 를 새 값으로 갱신하세요. 두 칸을 모두 비우면 인증 요청을 끕니다.",
+                "data": {
+                    "nid_aut": "NID_AUT 쿠키",
+                    "nid_ses": "NID_SES 쿠키"
+                }
+            }
+        },
+        "error": {
+            "invalid_channel": "입력값에서 채널 ID를 추출하지 못했습니다.",
+            "not_found": "치지직이 이 채널 ID를 찾을 수 없습니다.",
+            "cannot_connect": "api.chzzk.naver.com에 연결하지 못했습니다.",
+            "invalid_cookies": "치지직이 이 쿠키를 거부했습니다. chzzk.naver.com에서 다시 복사해 주세요.",
+            "already_added": "이 채널은 이미 추가되어 있습니다."
+        },
+        "abort": {
+            "no_channels": "등록된 채널이 없습니다."
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "streaming": {
+                "name": "방송 중"
+            }
+        },
+        "sensor": {
+            "title": {
+                "name": "방송 제목"
+            },
+            "category": {
+                "name": "카테고리"
+            },
+            "viewers": {
+                "name": "시청자 수"
+            },
+            "started_at": {
+                "name": "방송 시작 시각"
+            },
+            "followers": {
+                "name": "팔로워 수"
+            }
+        }
+    }
+}

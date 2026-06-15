@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Install Home Assistant + dev deps inside the devcontainer.
+set -euxo pipefail
+
+cd "$(dirname "$0")/.."
+
+python3 -m pip install --upgrade pip wheel
+
+# Pin a recent stable HA — keep in sync with hacs.json's `homeassistant` floor.
+# Add your integration's runtime deps here (mirror manifest.json `requirements`).
+python3 -m pip install \
+  "homeassistant" \
+  "ruff" \
+  "colorlog"
+
+mkdir -p config
+if [ ! -f config/configuration.yaml ]; then
+  cat > config/configuration.yaml <<'YAML'
+default_config:
+
+logger:
+  default: info
+  logs:
+    custom_components.chzzk: debug
+YAML
+fi
+
+# Symlink the integration into HA's config dir so edits hot-reload.
+mkdir -p config/custom_components
+ln -sfn "$PWD/custom_components/chzzk" config/custom_components/chzzk
+
+echo "Setup complete. Run scripts/develop to start Home Assistant."

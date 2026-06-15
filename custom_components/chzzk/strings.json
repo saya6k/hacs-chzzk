@@ -1,0 +1,101 @@
+{
+    "title": "Chzzk",
+    "config": {
+        "step": {
+            "user": {
+                "title": "Naver session cookies (optional)",
+                "description": "Anonymous polling already works for live status, title, viewers, and follower count, so you can skip this step. Paste the NID_AUT and NID_SES cookies from chzzk.naver.com only if you need access to adult-only channels or future authenticated features. These cookies are stored once and shared by every channel you add later.",
+                "data": {
+                    "nid_aut": "NID_AUT cookie",
+                    "nid_ses": "NID_SES cookie"
+                }
+            },
+            "channel": {
+                "title": "Add your first Chzzk channel",
+                "description": "Paste the channel URL (https://chzzk.naver.com/CHANNELID) or the bare 32-character channel ID. You can add more channels later from this integration's Configure menu.",
+                "data": {
+                    "channel": "Channel URL or ID"
+                }
+            }
+        },
+        "error": {
+            "invalid_channel": "Could not extract a Chzzk channel ID from that input.",
+            "not_found": "Chzzk does not recognize this channel ID.",
+            "cannot_connect": "Couldn't reach api.chzzk.naver.com. Check the integration's network access and try again.",
+            "invalid_cookies": "Chzzk rejected those cookies. Open chzzk.naver.com in a browser, log in, and copy the NID_AUT and NID_SES values fresh.",
+            "already_added": "That channel is already added to this integration."
+        },
+        "abort": {
+            "single_instance_allowed": "Chzzk is already set up. Use the Configure menu on the existing entry to add or remove channels."
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Chzzk",
+                "description": "Add channels, remove channels, or refresh the shared Naver session cookies.",
+                "menu_options": {
+                    "add_channel": "Add a channel",
+                    "remove_channel": "Remove a channel",
+                    "update_cookies": "Update Naver session cookies"
+                }
+            },
+            "add_channel": {
+                "title": "Add a channel",
+                "description": "Paste the channel URL (https://chzzk.naver.com/CHANNELID) or the bare 32-character channel ID.",
+                "data": {
+                    "channel": "Channel URL or ID"
+                }
+            },
+            "remove_channel": {
+                "title": "Remove a channel",
+                "description": "Pick which channel to remove. The channel's device and entities will be cleaned up automatically.",
+                "data": {
+                    "channel": "Channel"
+                }
+            },
+            "update_cookies": {
+                "title": "Update Naver session cookies",
+                "description": "Refresh the shared NID_AUT and NID_SES cookies when your previous session expires. Leave both blank to disable authenticated requests.",
+                "data": {
+                    "nid_aut": "NID_AUT cookie",
+                    "nid_ses": "NID_SES cookie"
+                }
+            }
+        },
+        "error": {
+            "invalid_channel": "Could not extract a Chzzk channel ID from that input.",
+            "not_found": "Chzzk does not recognize this channel ID.",
+            "cannot_connect": "Couldn't reach api.chzzk.naver.com.",
+            "invalid_cookies": "Chzzk rejected those cookies. Try copying them again from chzzk.naver.com.",
+            "already_added": "That channel is already added to this integration."
+        },
+        "abort": {
+            "no_channels": "No channels are configured yet."
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "streaming": {
+                "name": "Streaming"
+            }
+        },
+        "sensor": {
+            "title": {
+                "name": "Title"
+            },
+            "category": {
+                "name": "Category"
+            },
+            "viewers": {
+                "name": "Viewers"
+            },
+            "started_at": {
+                "name": "Started at"
+            },
+            "followers": {
+                "name": "Followers"
+            }
+        }
+    }
+}

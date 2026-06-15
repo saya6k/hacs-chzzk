@@ -1,0 +1,7 @@
+{
+    "name": "Chzzk",
+    "render_readme": true,
+    "homeassistant": "2024.10.0",
+    "iot_class": "cloud_polling",
+    "content_in_root": false
+}

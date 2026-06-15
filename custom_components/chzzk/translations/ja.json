@@ -1,0 +1,101 @@
+{
+    "title": "Chzzk",
+    "config": {
+        "step": {
+            "user": {
+                "title": "Naver セッションクッキー(オプション)",
+                "description": "匿名リクエストでも配信状態・タイトル・視聴者数・フォロワー数は取得できるため、このステップはスキップしても構いません。アダルト限定チャンネルや今後の認証要求が必要な場合のみ chzzk.naver.com の NID_AUT と NID_SES クッキーを貼り付けてください。入力したクッキーは一度だけ保存され、以後追加するすべてのチャンネルで共有されます。",
+                "data": {
+                    "nid_aut": "NID_AUT クッキー",
+                    "nid_ses": "NID_SES クッキー"
+                }
+            },
+            "channel": {
+                "title": "最初の Chzzk チャンネルを追加",
+                "description": "チャンネル URL (https://chzzk.naver.com/CHANNELID) または 32 文字のチャンネル ID を貼り付けてください。追加のチャンネルは統合の Configure メニューから後で登録できます。",
+                "data": {
+                    "channel": "チャンネル URL または ID"
+                }
+            }
+        },
+        "error": {
+            "invalid_channel": "入力からチャンネル ID を取得できませんでした。",
+            "not_found": "Chzzk はこのチャンネル ID を認識していません。",
+            "cannot_connect": "api.chzzk.naver.com に接続できませんでした。ネットワーク設定を確認して再試行してください。",
+            "invalid_cookies": "Chzzk がクッキーを拒否しました。chzzk.naver.com にログインし NID_AUT と NID_SES を取り直してください。",
+            "already_added": "このチャンネルは既に追加されています。"
+        },
+        "abort": {
+            "single_instance_allowed": "Chzzk は既に設定済みです。既存エントリの Configure メニューからチャンネルを追加/削除してください。"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Chzzk",
+                "description": "チャンネルの追加・削除や、すべてのチャンネルで共有される Naver セッションクッキーの更新ができます。",
+                "menu_options": {
+                    "add_channel": "チャンネル追加",
+                    "remove_channel": "チャンネル削除",
+                    "update_cookies": "Naver セッションクッキーの更新"
+                }
+            },
+            "add_channel": {
+                "title": "チャンネルを追加",
+                "description": "チャンネル URL (https://chzzk.naver.com/CHANNELID) または 32 文字のチャンネル ID を貼り付けてください。",
+                "data": {
+                    "channel": "チャンネル URL または ID"
+                }
+            },
+            "remove_channel": {
+                "title": "チャンネルを削除",
+                "description": "削除するチャンネルを選択してください。そのチャンネルのデバイスとエンティティは自動的に整理されます。",
+                "data": {
+                    "channel": "チャンネル"
+                }
+            },
+            "update_cookies": {
+                "title": "Naver セッションクッキーの更新",
+                "description": "セッションが切れた場合は共有 NID_AUT と NID_SES を新しい値に更新してください。両方を空にすると認証要求は無効になります。",
+                "data": {
+                    "nid_aut": "NID_AUT クッキー",
+                    "nid_ses": "NID_SES クッキー"
+                }
+            }
+        },
+        "error": {
+            "invalid_channel": "入力からチャンネル ID を取得できませんでした。",
+            "not_found": "Chzzk はこのチャンネル ID を認識していません。",
+            "cannot_connect": "api.chzzk.naver.com に接続できませんでした。",
+            "invalid_cookies": "Chzzk がクッキーを拒否しました。chzzk.naver.com から取り直してください。",
+            "already_added": "このチャンネルは既に追加されています。"
+        },
+        "abort": {
+            "no_channels": "登録されているチャンネルがありません。"
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "streaming": {
+                "name": "配信中"
+            }
+        },
+        "sensor": {
+            "title": {
+                "name": "配信タイトル"
+            },
+            "category": {
+                "name": "カテゴリー"
+            },
+            "viewers": {
+                "name": "視聴者数"
+            },
+            "started_at": {
+                "name": "配信開始時刻"
+            },
+            "followers": {
+                "name": "フォロワー数"
+            }
+        }
+    }
+}

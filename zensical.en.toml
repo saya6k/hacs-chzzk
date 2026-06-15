@@ -1,0 +1,21 @@
+[project]
+site_name = "Chzzk for Home Assistant"
+site_url = "https://saya6k.github.io/ha-chzzk/en/"
+site_description = "Custom integration that surfaces Chzzk (치지직) streaming channels in Home Assistant, with an LLM API for conversation agents."
+docs_dir = "docs/en"
+site_dir = "site/en"
+repo_url = "https://github.com/saya6k/ha-chzzk"
+edit_uri = "edit/main/docs/en/"
+
+[project.theme]
+language = "en"
+
+[[project.extra.alternate]]
+name = "English"
+link = "https://saya6k.github.io/ha-chzzk/en/"
+lang = "en"
+
+[[project.extra.alternate]]
+name = "한국어"
+link = "https://saya6k.github.io/ha-chzzk/ko/"
+lang = "ko"
