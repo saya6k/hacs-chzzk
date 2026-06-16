@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.5.6](https://github.com/saya6k/ha-chzzk/compare/chzzk-v0.5.5...chzzk-v0.5.6) (2026-06-16)
+
+
+### Bug Fixes
+
+* **manifest:** point documentation at the published docs site ([aea06f6](https://github.com/saya6k/ha-chzzk/commit/aea06f6239d2d605eb39f9ddfa2707397ef3eadd))
+
+
+### CI
+
+* pass a PAT to release-please so the release PR runs CI ([#2](https://github.com/saya6k/ha-chzzk/issues/2)) ([d6c0592](https://github.com/saya6k/ha-chzzk/commit/d6c0592e29fdbebaf4bc82bc61c8de70a7de9cc0))
+
 ## [0.5.5](https://github.com/saya6k/ha-chzzk/compare/chzzk-v0.5.4...chzzk-v0.5.5) (2026-06-15)
 
 
