@@ -19,6 +19,7 @@
     ".": {
       "package-name": "chzzk",
       "changelog-path": "CHANGELOG.md",
+      "draft": true,
       "extra-files": [
         {"type": "json", "path": "custom_components/chzzk/manifest.json", "jsonpath": "$.version"}
       ]
