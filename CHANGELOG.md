@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.8](https://github.com/saya6k/ha-chzzk/compare/chzzk-v0.5.7...chzzk-v0.5.8) (2026-07-01)
+
+
+### Documentation
+
+* reflect service entry_type in agent instructions ([#7](https://github.com/saya6k/ha-chzzk/issues/7)) ([84a6530](https://github.com/saya6k/ha-chzzk/commit/84a65302de1608f6a5cf78fe80e67a72b5be8ef2))
+
 ## [0.5.7](https://github.com/saya6k/ha-chzzk/compare/chzzk-v0.5.6...chzzk-v0.5.7) (2026-07-01)
 
 
