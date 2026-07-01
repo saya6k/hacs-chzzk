@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from homeassistant.helpers.device_registry import DeviceInfo
+from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
 from homeassistant.helpers.entity import EntityDescription
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
@@ -24,6 +24,7 @@ class ChzzkEntity(CoordinatorEntity[ChzzkCoordinator]):
         self._attr_unique_id = f"{coordinator.channel_id}_{description.key}"
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, coordinator.channel_id)},
+            entry_type=DeviceEntryType.SERVICE,
             manufacturer=MANUFACTURER,
             name=coordinator.channel_name,
             configuration_url=f"https://chzzk.naver.com/{coordinator.channel_id}",
