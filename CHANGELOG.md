@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.10](https://github.com/saya6k/ha-chzzk/compare/chzzk-v0.5.9...chzzk-v0.5.10) (2026-07-01)
+
+
+### CI
+
+* draft releases with manual publish; deploy docs on release-published ([#11](https://github.com/saya6k/ha-chzzk/issues/11)) ([228aaea](https://github.com/saya6k/ha-chzzk/commit/228aaea999b6381a86c057d9b1a0324aa095ce79))
+
 ## [0.5.9](https://github.com/saya6k/ha-chzzk/compare/chzzk-v0.5.8...chzzk-v0.5.9) (2026-07-01)
 
 
