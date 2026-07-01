@@ -14,7 +14,8 @@ AGENTS may name files there, README/CHANGELOG must not). CHANGELOG carries
 A Home Assistant **custom integration** (HACS, category *Integration*) that
 surfaces [Chzzk (치지직)](https://chzzk.naver.com) streaming channels,
 modelled on the official Twitch integration. Each configured channel becomes
-a device with six entities (streaming binary_sensor + five sensors). Also
+a device registered as a *service* entry (`entry_type=service`, not physical
+hardware) with six entities (streaming binary_sensor + five sensors). Also
 ships an **LLM API** so conversation agents can answer "is X streaming?" by
 calling tools, plus an authenticated REST endpoint for Glance widgets.
 
