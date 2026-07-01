@@ -13,5 +13,5 @@
     "iot_class": "cloud_polling",
     "issue_tracker": "https://github.com/saya6k/ha-chzzk/issues",
     "requirements": [],
-    "version": "0.5.7"
+    "version": "0.5.8"
 }
