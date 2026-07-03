@@ -1,9 +1,9 @@
 {
-  "name": "chzzk",
+  "name": "ha-chzzk-dev",
   "image": "mcr.microsoft.com/devcontainers/python:3-3.13-bookworm",
-  "runArgs": ["--hostname=chzzk-dev"],
+  "runArgs": ["--hostname=ha-chzzk-dev"],
   "postCreateCommand": "scripts/setup",
-  "forwardPorts": [8123],
+  "forwardPorts": [7123],
   "portsAttributes": {
     "8123": {
       "label": "Home Assistant (dev)",
