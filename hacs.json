@@ -2,5 +2,7 @@
     "name": "Chzzk",
     "render_readme": true,
     "homeassistant": "2024.10.0",
-    "content_in_root": false
+    "content_in_root": false,
+    "zip_release": true,
+    "filename": "chzzk.zip"
 }
