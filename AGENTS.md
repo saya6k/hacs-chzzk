@@ -54,6 +54,20 @@ zensical.{en,ko}.toml           Zensical site config
 - REST endpoint `GET /api/chzzk/channels` returns the aggregate JSON with a
   valid long-lived token.
 
+## Release workflow
+
+This repo (and other `ha-*` HACS components, excluding `ha-app*`) ships on a
+two-track rolling draft release, maintained by release-drafter since
+`e381a26` (#18): a `rc` (prerelease) draft and a `stable` draft, both updated
+continuously as PRs merge to `main`.
+
+1. Verify locally with the devcontainer (`scripts/develop`) before merging —
+   see Sanity checks above.
+2. Once merged and the `rc` draft looks right, publish it as a prerelease
+   from the GitHub Releases UI.
+3. After the prerelease has been exercised with no issues, promote/publish
+   the corresponding `stable` draft.
+
 ## Don'ts
 
 - **Don't poll both endpoints on the same fast interval** — it gets cookies
