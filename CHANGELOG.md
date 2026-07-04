@@ -1,62 +1,62 @@
 # Changelog
 
-## [0.5.10](https://github.com/saya6k/ha-chzzk/compare/chzzk-v0.5.9...chzzk-v0.5.10) (2026-07-01)
+## [0.5.10](https://github.com/saya6k/hacs-chzzk/compare/chzzk-v0.5.9...chzzk-v0.5.10) (2026-07-01)
 
 
 ### CI
 
-* draft releases with manual publish; deploy docs on release-published ([#11](https://github.com/saya6k/ha-chzzk/issues/11)) ([228aaea](https://github.com/saya6k/ha-chzzk/commit/228aaea999b6381a86c057d9b1a0324aa095ce79))
+* draft releases with manual publish; deploy docs on release-published ([#11](https://github.com/saya6k/hacs-chzzk/issues/11)) ([228aaea](https://github.com/saya6k/hacs-chzzk/commit/228aaea999b6381a86c057d9b1a0324aa095ce79))
 
-## [0.5.9](https://github.com/saya6k/ha-chzzk/compare/chzzk-v0.5.8...chzzk-v0.5.9) (2026-07-01)
+## [0.5.9](https://github.com/saya6k/hacs-chzzk/compare/chzzk-v0.5.8...chzzk-v0.5.9) (2026-07-01)
 
 
 ### Bug Fixes
 
-* define config_entry_only CONFIG_SCHEMA ([#9](https://github.com/saya6k/ha-chzzk/issues/9)) ([1ad2e98](https://github.com/saya6k/ha-chzzk/commit/1ad2e986fd355a7cee8f84005fefe3eb61c73209))
+* define config_entry_only CONFIG_SCHEMA ([#9](https://github.com/saya6k/hacs-chzzk/issues/9)) ([1ad2e98](https://github.com/saya6k/hacs-chzzk/commit/1ad2e986fd355a7cee8f84005fefe3eb61c73209))
 
-## [0.5.8](https://github.com/saya6k/ha-chzzk/compare/chzzk-v0.5.7...chzzk-v0.5.8) (2026-07-01)
+## [0.5.8](https://github.com/saya6k/hacs-chzzk/compare/chzzk-v0.5.7...chzzk-v0.5.8) (2026-07-01)
 
 
 ### Documentation
 
-* reflect service entry_type in agent instructions ([#7](https://github.com/saya6k/ha-chzzk/issues/7)) ([84a6530](https://github.com/saya6k/ha-chzzk/commit/84a65302de1608f6a5cf78fe80e67a72b5be8ef2))
+* reflect service entry_type in agent instructions ([#7](https://github.com/saya6k/hacs-chzzk/issues/7)) ([84a6530](https://github.com/saya6k/hacs-chzzk/commit/84a65302de1608f6a5cf78fe80e67a72b5be8ef2))
 
-## [0.5.7](https://github.com/saya6k/ha-chzzk/compare/chzzk-v0.5.6...chzzk-v0.5.7) (2026-07-01)
+## [0.5.7](https://github.com/saya6k/hacs-chzzk/compare/chzzk-v0.5.6...chzzk-v0.5.7) (2026-07-01)
 
 
 ### Bug Fixes
 
-* register channels as service entries in device registry ([#6](https://github.com/saya6k/ha-chzzk/issues/6)) ([a14ff29](https://github.com/saya6k/ha-chzzk/commit/a14ff293cfea1e0bd3ce8be1a27ae9522f684a6a))
+* register channels as service entries in device registry ([#6](https://github.com/saya6k/hacs-chzzk/issues/6)) ([a14ff29](https://github.com/saya6k/hacs-chzzk/commit/a14ff293cfea1e0bd3ce8be1a27ae9522f684a6a))
 
 
 ### Documentation
 
-* add HACS My Home Assistant badge to README ([#4](https://github.com/saya6k/ha-chzzk/issues/4)) ([d397aee](https://github.com/saya6k/ha-chzzk/commit/d397aee1841e5a45286633bd7f0951bb73d87798))
+* add HACS My Home Assistant badge to README ([#4](https://github.com/saya6k/hacs-chzzk/issues/4)) ([d397aee](https://github.com/saya6k/hacs-chzzk/commit/d397aee1841e5a45286633bd7f0951bb73d87798))
 
-## [0.5.6](https://github.com/saya6k/ha-chzzk/compare/chzzk-v0.5.5...chzzk-v0.5.6) (2026-06-16)
-
-
-### Bug Fixes
-
-* **manifest:** point documentation at the published docs site ([aea06f6](https://github.com/saya6k/ha-chzzk/commit/aea06f6239d2d605eb39f9ddfa2707397ef3eadd))
-
-
-### CI
-
-* pass a PAT to release-please so the release PR runs CI ([#2](https://github.com/saya6k/ha-chzzk/issues/2)) ([d6c0592](https://github.com/saya6k/ha-chzzk/commit/d6c0592e29fdbebaf4bc82bc61c8de70a7de9cc0))
-
-## [0.5.5](https://github.com/saya6k/ha-chzzk/compare/chzzk-v0.5.4...chzzk-v0.5.5) (2026-06-15)
+## [0.5.6](https://github.com/saya6k/hacs-chzzk/compare/chzzk-v0.5.5...chzzk-v0.5.6) (2026-06-16)
 
 
 ### Bug Fixes
 
-* resolve HACS + hassfest validation errors ([a618033](https://github.com/saya6k/ha-chzzk/commit/a6180336152a4307a16be11d7bcdff26e7e1070f))
+* **manifest:** point documentation at the published docs site ([aea06f6](https://github.com/saya6k/hacs-chzzk/commit/aea06f6239d2d605eb39f9ddfa2707397ef3eadd))
 
 
 ### CI
 
-* gate release and docs workflows on Validate success ([d448e49](https://github.com/saya6k/ha-chzzk/commit/d448e495721c15c4ee8b5597b812f83a403a7426))
-* orchestrate validate/release/docs as one check suite via reusable workflows ([2fb4134](https://github.com/saya6k/ha-chzzk/commit/2fb41346aedf95ceb47afc0d8f77e09f656cb340))
+* pass a PAT to release-please so the release PR runs CI ([#2](https://github.com/saya6k/hacs-chzzk/issues/2)) ([d6c0592](https://github.com/saya6k/hacs-chzzk/commit/d6c0592e29fdbebaf4bc82bc61c8de70a7de9cc0))
+
+## [0.5.5](https://github.com/saya6k/hacs-chzzk/compare/chzzk-v0.5.4...chzzk-v0.5.5) (2026-06-15)
+
+
+### Bug Fixes
+
+* resolve HACS + hassfest validation errors ([a618033](https://github.com/saya6k/hacs-chzzk/commit/a6180336152a4307a16be11d7bcdff26e7e1070f))
+
+
+### CI
+
+* gate release and docs workflows on Validate success ([d448e49](https://github.com/saya6k/hacs-chzzk/commit/d448e495721c15c4ee8b5597b812f83a403a7426))
+* orchestrate validate/release/docs as one check suite via reusable workflows ([2fb4134](https://github.com/saya6k/hacs-chzzk/commit/2fb41346aedf95ceb47afc0d8f77e09f656cb340))
 
 ## Changelog
 

@@ -1,7 +1,7 @@
 {
-  "name": "ha-chzzk-dev",
+  "name": "hacs-chzzk-dev",
   "image": "mcr.microsoft.com/devcontainers/python:3-3.13-bookworm",
-  "runArgs": ["--hostname=ha-chzzk-dev"],
+  "runArgs": ["--hostname=hacs-chzzk-dev"],
   "postCreateCommand": "scripts/setup",
   "forwardPorts": [7123],
   "portsAttributes": {

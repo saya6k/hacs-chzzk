@@ -8,10 +8,10 @@
   "dependencies": [
     "http"
   ],
-  "documentation": "https://saya6k.github.io/ha-chzzk/",
+  "documentation": "https://saya6k.github.io/hacs-chzzk/",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/saya6k/ha-chzzk/issues",
+  "issue_tracker": "https://github.com/saya6k/hacs-chzzk/issues",
   "requirements": [],
   "version": "0.0.0"
 }
