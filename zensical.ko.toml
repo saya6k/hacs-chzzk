@@ -1,10 +1,10 @@
 [project]
 site_name = "Chzzk for Home Assistant"
-site_url = "https://saya6k.github.io/ha-chzzk/ko/"
+site_url = "https://saya6k.github.io/hacs-chzzk/ko/"
 site_description = "치지직(Chzzk) 스트리밍 채널을 Home Assistant에 노출하는 커스텀 통합. 대화 에이전트용 LLM API 포함."
 docs_dir = "docs/ko"
 site_dir = "site/ko"
-repo_url = "https://github.com/saya6k/ha-chzzk"
+repo_url = "https://github.com/saya6k/hacs-chzzk"
 edit_uri = "edit/main/docs/ko/"
 
 [project.theme]
@@ -12,10 +12,10 @@ language = "ko"
 
 [[project.extra.alternate]]
 name = "English"
-link = "https://saya6k.github.io/ha-chzzk/en/"
+link = "https://saya6k.github.io/hacs-chzzk/en/"
 lang = "en"
 
 [[project.extra.alternate]]
 name = "한국어"
-link = "https://saya6k.github.io/ha-chzzk/ko/"
+link = "https://saya6k.github.io/hacs-chzzk/ko/"
 lang = "ko"

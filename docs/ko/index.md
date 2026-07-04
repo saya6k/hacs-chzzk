@@ -26,7 +26,7 @@
 
 ### HACS
 
-1. **HACS → ⋮ → Custom repositories** → `https://github.com/saya6k/ha-chzzk` 추가 (카테고리 *Integration*)
+1. **HACS → ⋮ → Custom repositories** → `https://github.com/saya6k/hacs-chzzk` 추가 (카테고리 *Integration*)
 2. **Chzzk** 설치 후 Home Assistant 재시작
 3. **설정 → 기기 및 서비스 → 통합 추가 → Chzzk**
 4. 채널 URL(`https://chzzk.naver.com/<channel_id>`) 또는 32자 채널 ID 입력

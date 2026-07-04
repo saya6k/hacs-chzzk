@@ -25,7 +25,7 @@ _HEADERS = {
     "Accept": "application/json",
     "User-Agent": (
         "Mozilla/5.0 (HomeAssistant; +https://www.home-assistant.io) "
-        "ha-chzzk/0.1"
+        "hacs-chzzk/0.1"
     ),
 }
 
