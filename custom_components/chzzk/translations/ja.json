@@ -80,6 +80,19 @@
                 "name": "配信中"
             }
         },
+        "event": {
+            "stream": {
+                "name": "配信",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "started": "配信開始",
+                            "ended": "配信終了"
+                        }
+                    }
+                }
+            }
+        },
         "sensor": {
             "title": {
                 "name": "配信タイトル"
