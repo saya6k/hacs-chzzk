@@ -80,6 +80,19 @@
                 "name": "Streaming"
             }
         },
+        "event": {
+            "stream": {
+                "name": "Stream",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "started": "Started",
+                            "ended": "Ended"
+                        }
+                    }
+                }
+            }
+        },
         "sensor": {
             "title": {
                 "name": "Title"

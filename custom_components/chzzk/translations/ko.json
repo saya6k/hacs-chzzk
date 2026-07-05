@@ -80,6 +80,19 @@
                 "name": "방송 중"
             }
         },
+        "event": {
+            "stream": {
+                "name": "방송",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "started": "방송 시작",
+                            "ended": "방송 종료"
+                        }
+                    }
+                }
+            }
+        },
         "sensor": {
             "title": {
                 "name": "방송 제목"
