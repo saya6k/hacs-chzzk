@@ -23,7 +23,7 @@ from .const import (
     DOMAIN,
 )
 from .coordinator import ChzzkCoordinator
-from .llm import async_register as async_register_llm
+from .llm_api import async_register as async_register_llm
 from .views import ChzzkChannelsView
 
 _LOGGER = logging.getLogger(__name__)
