@@ -22,6 +22,8 @@ Once installed, an **"Chzzk"** entry shows up under **Settings → Voice assista
 
 Tool results follow the convention used by [`voice-satellite-card-llm-tools`](https://github.com/jxlarrea/voice-satellite-card-llm-tools): `source`, `auto_display`, `instruction`, `results[]` with each item carrying `image_url` / `thumbnail_url` / `title` / `source_url`. The matching satellite Lovelace card auto-renders an image grid; the LLM uses the extra per-item fields (`is_streaming`, `stream_title`, `category`, `viewer_count`, …) to narrate.
 
+The LLM tools require **Home Assistant 2026.8 or later** — they're provided through HA's `llm` platform, loaded lazily on first use. Once enabled, they're also reachable over MCP at `/api/mcp/chzzk` (admin token) if you run the MCP Server integration.
+
 ## Install
 
 ### HACS

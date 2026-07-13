@@ -22,6 +22,8 @@
 
 도구 결과는 [`voice-satellite-card-llm-tools`](https://github.com/jxlarrea/voice-satellite-card-llm-tools) 컨벤션을 따릅니다: `source`, `auto_display`, `instruction`, `results[]` (각 항목에 `image_url` / `thumbnail_url` / `title` / `source_url`). 매칭되는 satellite Lovelace 카드가 이미지 그리드를 자동 렌더링하고, LLM은 항목별 부가 필드(`is_streaming`, `stream_title`, `category`, `viewer_count` 등)로 설명합니다.
 
+LLM 도구는 **Home Assistant 2026.8 이상**이 필요합니다 — HA의 `llm` 플랫폼을 통해 최초 사용 시점에 지연 로딩됩니다. 활성화하면 MCP Server 통합을 사용 중일 경우 `/api/mcp/chzzk` (관리자 토큰)로도 접근할 수 있습니다.
+
 ## 설치
 
 ### HACS
