@@ -1,0 +1,1 @@
+- [LLM platform migration test strategy](llm-platform-migration-test-strategy.md) — port hacs-kakao-map's vendored-fixture pattern when chzzk gets tests
