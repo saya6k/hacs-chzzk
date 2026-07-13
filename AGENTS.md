@@ -23,7 +23,9 @@ calling tools, plus an authenticated REST endpoint for Glance widgets.
 ## Layout
 
 ```
-custom_components/chzzk/        the integration (manifest.json, config_flow, coordinator, entities, llm_api, http view)
+custom_components/chzzk/        the integration (manifest.json, config_flow, coordinator, entities, http view)
+  llm_api.py                    opt-in llm.API shell (thin; no tool code)
+  llm.py                        lazy-loaded llm platform (tools live here)
 hacs.json                       HACS metadata
 docs/{en,ko}/                   Zensical doc sources
 zensical.{en,ko}.toml           Zensical site config
@@ -45,6 +47,11 @@ zensical.{en,ko}.toml           Zensical site config
   convention (`source`, `auto_display`, `instruction`, `results[]` with
   `image_url`/`thumbnail_url`/`title`/`source_url`). Don't break that shape —
   the satellite Lovelace card depends on it.
+- **LLM tools are lazy-loaded.** Tool code lives in `llm.py`, an HA `llm`
+  platform module (HA ≥ 2026.8) discovered only on first use. `llm_api.py`
+  is the opt-in `llm.API` shell and must not import `.llm` or
+  `homeassistant.components.llm` at module level — only inside
+  `async_get_api_instance`.
 
 ## Sanity checks before release
 
@@ -76,6 +83,8 @@ continuously as PRs merge to `main`.
 - **Don't assume the API is stable** — endpoints/fields are undocumented and
   change without notice. Fail soft (entities go `unavailable`, not crash).
 - **Don't strip the `ha-` prefix** from the GitHub project name / brand.
+- **Don't import `.llm` from the setup path** (`__init__.py`, `llm_api.py`
+  module scope) — it defeats HA's lazy platform loading.
 
 ## License
 
