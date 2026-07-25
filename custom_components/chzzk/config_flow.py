@@ -106,11 +106,9 @@ class ChzzkConfigFlow(ConfigFlow, domain=DOMAIN):
     async def async_step_user(
         self, user_input: dict[str, Any] | None = None
     ) -> ConfigFlowResult:
-        # Enforce a single Chzzk entry — multiple entries would each need their
-        # own cookies, which is the friction we want to eliminate.
-        if self._async_current_entries():
-            return self.async_abort(reason="single_instance_allowed")
-
+        # Single-entry enforcement lives in the manifest
+        # (``single_config_entry``); HA aborts with ``single_instance_allowed``
+        # before this step runs.
         if user_input is not None:
             # Stash cookies in self.context for the next step (framework-owned).
             self.context["chzzk_cookies"] = {
