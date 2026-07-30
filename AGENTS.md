@@ -1,8 +1,10 @@
 # Repository agent instructions
 
-> `CLAUDE.md` and `GEMINI.md` are local symlinks to this file (gitignored) — edit `AGENTS.md`.
+> `CLAUDE.md` and `GEMINI.md` are local symlinks to this file — edit `AGENTS.md`.
 
-Agent assets live under `.agents/` (the source of truth): `skills/`, `workflows/` (commands), `agents/`, and `memory/` (Claude's per-project memory). `.claude/` is a real directory: its `settings.json` is Claude-specific and tracked; its per-item symlinks into `.agents/` (`skills`, `commands` → `workflows`, `agents`) and `settings.local.json` are local-only, as are the `CLAUDE.md`/`GEMINI.md` → `AGENTS.md` symlinks and `.gemini` → `.agents`.
+**None of the agent scaffolding is committed** — `AGENTS.md`, `.agents/`, `.claude/`, `.gemini` are all gitignored and live only on this machine. Keep it that way; the published repo carries no AI meta.
+
+Agent assets live under `.agents/` (the source of truth): `skills/`, `workflows/` (commands), `agents/`, and `memory/` (Claude's per-project memory). `.claude/` is a real directory holding Claude-specific `settings.json` / `settings.local.json` plus per-item symlinks into `.agents/` (`skills`, `commands` → `workflows`, `agents`); `.gemini` → `.agents`.
 
 Guidance for AI coding agents. **Keep this file under ~100 lines** —
 describe the *current shape* only. *Why* lives under `notes/` (gitignored;
