@@ -6,7 +6,7 @@ Chzzk setup time. It answers only for Chzzk's own API id (see `.llm_api`),
 never `assist` or any other integration's API, so Chzzk tools only ever
 surface through the user-selected "Chzzk" API, not the shared Assist API.
 
-Tool results follow the convention used by
+ToolResult.data follows the convention used by
 ``jxlarrea/voice-satellite-card-llm-tools`` so the matching
 ``voice-satellite-card-integration`` Lovelace card can render visual feedback
 without extra glue. Specifically:
@@ -121,7 +121,9 @@ def _find_coordinator(hass: HomeAssistant, needle: str) -> ChzzkCoordinator | No
     return None
 
 
-def _empty_response(query: str, message: str, *, error: str | None = None) -> dict:
+def _empty_response(
+    query: str, message: str, *, error: str | None = None
+) -> llm.ToolResult:
     response: dict[str, Any] = {
         "source": "chzzk",
         "query": query,
@@ -132,11 +134,16 @@ def _empty_response(query: str, message: str, *, error: str | None = None) -> di
     }
     if error:
         response["error"] = error
-    return response
+    return llm.ToolResult(data=response, error=bool(error))
 
 
 class _ListChannelsTool(llm.Tool):
     name = "chzzk_list_channels"
+    title = "List Chzzk channels"
+    integration = DOMAIN
+    annotations = llm.ToolAnnotations(
+        read_only=True, destructive=False, idempotent=True, open_world=False
+    )
     description = (
         "List the live status of every Chzzk channel the user has added to "
         "Home Assistant. Use this when the user asks about Chzzk in general "
@@ -149,7 +156,7 @@ class _ListChannelsTool(llm.Tool):
         hass: HomeAssistant,
         tool_input: llm.ToolInput,
         llm_context: llm.LLMContext,
-    ) -> dict[str, Any]:
+    ) -> llm.ToolResult:
         coords = _all_coordinators(hass)
         if not coords:
             return _empty_response(
@@ -159,19 +166,26 @@ class _ListChannelsTool(llm.Tool):
             )
         items = [_result_item(c) for c in coords]
         live_count = sum(1 for it in items if it.get("is_streaming"))
-        return {
-            "source": "chzzk",
-            "query": "all",
-            "num_results": len(items),
-            "live_count": live_count,
-            "auto_display": True,
-            "instruction": _NARRATION_HINT,
-            "results": items,
-        }
+        return llm.ToolResult(
+            data={
+                "source": "chzzk",
+                "query": "all",
+                "num_results": len(items),
+                "live_count": live_count,
+                "auto_display": True,
+                "instruction": _NARRATION_HINT,
+                "results": items,
+            }
+        )
 
 
 class _ChannelStatusTool(llm.Tool):
     name = "chzzk_channel_status"
+    title = "Get Chzzk channel status"
+    integration = DOMAIN
+    annotations = llm.ToolAnnotations(
+        read_only=True, destructive=False, idempotent=True, open_world=False
+    )
     description = (
         "Get the current Chzzk live status (streaming flag, title, category, "
         "viewer count, started_at) for ONE channel identified by display "
@@ -189,7 +203,7 @@ class _ChannelStatusTool(llm.Tool):
         hass: HomeAssistant,
         tool_input: llm.ToolInput,
         llm_context: llm.LLMContext,
-    ) -> dict[str, Any]:
+    ) -> llm.ToolResult:
         needle = tool_input.tool_args["channel"]
         coord = _find_coordinator(hass, needle)
         if coord is None:
@@ -202,14 +216,16 @@ class _ChannelStatusTool(llm.Tool):
                 error="channel_not_configured",
             )
         item = _result_item(coord)
-        return {
-            "source": "chzzk",
-            "query": needle,
-            "num_results": 1,
-            "auto_display": True,
-            "instruction": _NARRATION_HINT,
-            "results": [item],
-        }
+        return llm.ToolResult(
+            data={
+                "source": "chzzk",
+                "query": needle,
+                "num_results": 1,
+                "auto_display": True,
+                "instruction": _NARRATION_HINT,
+                "results": [item],
+            }
+        )
 
 
 _TOOLS: list[llm.Tool] = [_ListChannelsTool(), _ChannelStatusTool()]
