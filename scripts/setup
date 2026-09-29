@@ -6,13 +6,11 @@ cd "$(dirname "$0")/.."
 
 python3 -m pip install --upgrade pip wheel
 
-# Pin HA to hacs.json's `homeassistant` floor — keep the two in sync. 2026.8 is
-# still a beta; naming the prerelease in the specifier is what makes pip accept
-# it (an unpinned install would land on 2026.7.x, where the `llm` platform that
-# llm.py registers does not exist yet).
+# Keep HA's minimum version in sync with hacs.json. Explicitly include the
+# prerelease so pip accepts the 2026.10 beta providing ToolResult metadata.
 # Add your integration's runtime deps here (mirror manifest.json `requirements`).
 python3 -m pip install \
-  "homeassistant>=2026.8.0b0" \
+  "homeassistant>=2026.10.0b0" \
   "ruff" \
   "colorlog"
 
