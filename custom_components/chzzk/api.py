@@ -16,6 +16,9 @@ BASE_URL = "https://api.chzzk.naver.com"
 LIVE_STATUS_URL = BASE_URL + "/polling/v2/channels/{channel_id}/live-status"
 LIVE_DETAIL_URL = BASE_URL + "/service/v2/channels/{channel_id}/live-detail"
 CHANNEL_URL = BASE_URL + "/service/v1/channels/{channel_id}"
+# Not the IANA "application/vnd.apple.mpegurl": HA's frontend only hands this
+# exact string to its HLS player when playing in the browser.
+HLS_MIME_TYPE = "application/x-mpegURL"
 VIDEOS_URL = (
     BASE_URL
     + "/service/v1/channels/{channel_id}/videos"
@@ -261,7 +264,7 @@ class ChzzkClient:
             if url := _best_mp4(playback):
                 return url, "video/mp4"
         if url := _hls_path(data.get("liveRewindPlaybackJson")):
-            return url, "application/vnd.apple.mpegurl"
+            return url, HLS_MIME_TYPE
         return None
 
 

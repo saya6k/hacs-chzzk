@@ -21,11 +21,15 @@ from homeassistant.components.media_source import (
 from homeassistant.core import HomeAssistant
 from homeassistant.util import dt as dt_util
 
-from .api import ChzzkApiError, ChzzkClient, VideoInfo, extract_channel_id
+from .api import (
+    HLS_MIME_TYPE,
+    ChzzkApiError,
+    ChzzkClient,
+    VideoInfo,
+    extract_channel_id,
+)
 from .const import DEFAULT_NAME, DOMAIN
 from .coordinator import ChzzkCoordinator
-
-HLS_MIME_TYPE = "application/vnd.apple.mpegurl"
 
 
 async def async_get_media_source(hass: HomeAssistant) -> ChzzkMediaSource:
