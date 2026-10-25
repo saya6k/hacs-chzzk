@@ -13,6 +13,23 @@
 | Started at | sensor | `openDate`, `device_class: timestamp` |
 | Followers | sensor | 채널 팔로워 수 |
 
+## 미디어 소스
+
+구성된 채널이 **미디어 → Chzzk** 아래에 표시됩니다. 채널을 열면 방송 중일 때 맨 위에 라이브(🔴 LIVE — HLS)가, 그 아래 최신 동영상(다시보기·업로드) 20개(MP4, 인코딩 중인 다시보기는 HLS)가 나열됩니다. 모두 이를 지원하는 미디어 플레이어(Chromecast, VLC, 브라우저 등)에서 재생할 수 있습니다. 자동화에서는:
+
+```yaml
+action: media_player.play_media
+target:
+  entity_id: media_player.living_room_tv
+data:
+  media_content_id: media-source://chzzk/live/<channel_id>
+  media_content_type: channel
+```
+
+미디어 ID는 치지직 URL과 같은 형태입니다: `chzzk.naver.com/live/<channel_id>` → `media-source://chzzk/live/<channel_id>`, `chzzk.naver.com/video/<video_no>` → `media-source://chzzk/video/<video_no>` (`media_content_type: video`). 구성하지 않은 채널·동영상도 재생할 수 있습니다.
+
+재생 URL은 재생 시점에 Chzzk에서 받아오므로 항상 새로 서명된 주소가 사용됩니다. 성인 전용 채널·동영상은 로그인 쿠키가 필요합니다.
+
 ## LLM API
 
 설치 후 **설정 → 음성 비서 → [에이전트] → 선택된 LLM API**에 **"Chzzk"** 항목이 표시됩니다. 활성화하면 두 도구가 노출됩니다:

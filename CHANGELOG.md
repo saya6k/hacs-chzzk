@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Expose channels as a media source: play the live stream or the latest videos on media players.
 - Require Home Assistant 2026.10.0b0 or later, including the development environment.
 - Return LLM tool results with explicit error flags and preserve satellite card payloads in `data`.
 - Declare Chzzk tool titles, integration ownership, and read-only annotations.
