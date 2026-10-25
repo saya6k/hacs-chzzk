@@ -13,6 +13,23 @@ A custom integration that surfaces [Chzzk (치지직)](https://chzzk.naver.com) 
 | Started at | sensor | `openDate`, `device_class: timestamp` |
 | Followers | sensor | Channel follower count |
 
+## Media source
+
+Configured channels appear under **Media → Chzzk**. Open a channel to find its live stream (🔴 LIVE, on top while on air — HLS) followed by its 20 latest videos (replays and uploads — MP4, or HLS while a replay is still being encoded). Both play on any media player that handles them (Chromecast, VLC, browser, …). From an automation:
+
+```yaml
+action: media_player.play_media
+target:
+  entity_id: media_player.living_room_tv
+data:
+  media_content_id: media-source://chzzk/live/<channel_id>
+  media_content_type: channel
+```
+
+Media ids mirror chzzk.naver.com URLs: `chzzk.naver.com/live/<channel_id>` → `media-source://chzzk/live/<channel_id>`, `chzzk.naver.com/video/<video_no>` → `media-source://chzzk/video/<video_no>` (with `media_content_type: video`). Any channel or video works here, not only configured ones.
+
+Playback URLs are fetched from Chzzk when playback starts, so they're always freshly signed. Adult-only channels and videos need the login cookies.
+
 ## LLM API
 
 Once installed, an **"Chzzk"** entry shows up under **Settings → Voice assistants → [agent] → Selected LLM APIs**. Enable it to expose two tools:
