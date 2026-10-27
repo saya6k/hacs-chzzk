@@ -7,6 +7,7 @@
 - Require Home Assistant 2026.10.0b0 or later, including the development environment.
 - Return LLM tool results with explicit error flags and preserve satellite card payloads in `data`.
 - Declare Chzzk tool titles, integration ownership, and read-only annotations.
+- **Breaking:** rename the LLM tools to `chzzk__list_channels` and `chzzk__channel_status` (Home Assistant's `<domain>__` tool name convention). Update any conversation prompt that names the old tools.
 
 ## [0.5.10](https://github.com/saya6k/hacs-chzzk/compare/chzzk-v0.5.9...chzzk-v0.5.10) (2026-07-01)
 

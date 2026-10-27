@@ -34,8 +34,8 @@ data:
 
 설치 후 **설정 → 음성 비서 → [에이전트] → 선택된 LLM API**에 **"Chzzk"** 항목이 표시됩니다. 활성화하면 두 도구가 노출됩니다:
 
-- `chzzk_list_channels()` — 구성된 모든 채널
-- `chzzk_channel_status(channel)` — 표시명 또는 32자 hex ID로 단일 채널 조회
+- `chzzk__list_channels()` — 구성된 모든 채널
+- `chzzk__channel_status(channel)` — 표시명 또는 32자 hex ID로 단일 채널 조회
 
 도구 결과는 `llm.ToolResult`로 반환하며, `data`는 [`voice-satellite-card-llm-tools`](https://github.com/jxlarrea/voice-satellite-card-llm-tools) 컨벤션을 따릅니다: `source`, `auto_display`, `instruction`, `results[]` (각 항목에 `image_url` / `thumbnail_url` / `title` / `source_url`). 매칭되는 satellite Lovelace 카드가 이미지 그리드를 자동 렌더링하고, LLM은 항목별 부가 필드(`is_streaming`, `stream_title`, `category`, `viewer_count` 등)로 설명합니다.
 

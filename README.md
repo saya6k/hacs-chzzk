@@ -43,8 +43,8 @@ Playback URLs are fetched from Chzzk when playback starts, so they're always fre
 
 Once installed, an **"Chzzk"** entry shows up under **Settings → Voice assistants → [agent] → Selected LLM APIs**. Enable it to expose two tools:
 
-- `chzzk_list_channels()` — every configured channel
-- `chzzk_channel_status(channel)` — single channel by display name or 32-hex id
+- `chzzk__list_channels()` — every configured channel
+- `chzzk__channel_status(channel)` — single channel by display name or 32-hex id
 
 Tool results use `llm.ToolResult`; its `data` preserves the convention used by [`voice-satellite-card-llm-tools`](https://github.com/jxlarrea/voice-satellite-card-llm-tools): `source`, `auto_display`, `instruction`, `results[]` with each item carrying `image_url` / `thumbnail_url` / `title` / `source_url`. The matching satellite Lovelace card auto-renders an image grid; the LLM uses the extra per-item fields (`is_streaming`, `stream_title`, `category`, `viewer_count`, …) to narrate.
 
