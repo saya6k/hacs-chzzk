@@ -37,8 +37,8 @@ from .coordinator import ChzzkCoordinator, ChzzkData
 
 API_PROMPT = (
     "You can query the live status of Chzzk streaming channels the "
-    "user has added to Home Assistant. Prefer chzzk_channel_status "
-    "when the user names a specific channel; use chzzk_list_channels "
+    "user has added to Home Assistant. Prefer chzzk__channel_status "
+    "when the user names a specific channel; use chzzk__list_channels "
     "for general questions. The user's Voice Satellite card renders "
     "the thumbnails returned by these tools — your spoken reply "
     "should narrate, not list URLs."
@@ -138,7 +138,7 @@ def _empty_response(
 
 
 class _ListChannelsTool(llm.Tool):
-    name = "chzzk_list_channels"
+    name = "chzzk__list_channels"
     title = "List Chzzk channels"
     integration = DOMAIN
     annotations = llm.ToolAnnotations(
@@ -180,7 +180,7 @@ class _ListChannelsTool(llm.Tool):
 
 
 class _ChannelStatusTool(llm.Tool):
-    name = "chzzk_channel_status"
+    name = "chzzk__channel_status"
     title = "Get Chzzk channel status"
     integration = DOMAIN
     annotations = llm.ToolAnnotations(
