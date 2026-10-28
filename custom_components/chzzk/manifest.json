@@ -1,6 +1,9 @@
 {
   "domain": "chzzk",
   "name": "Chzzk",
+  "categories": [
+    "news_social_media"
+  ],
   "codeowners": [
     "@saya6k"
   ],
